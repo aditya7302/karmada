@@ -1,8 +1,9 @@
 name: APIServer compatibility
-on:
-  schedule:
-    # Run this workflow "At 20:00 UTC on Sunday and Saturday"
-    - cron: '0 20 * * 0,6'
+on: workflow_dispatch
+  # schedule:
+  #   # Run this workflow "At 20:00 UTC on Sunday and Saturday"
+  #   - cron: '0 20 * * 0,6'
+
 
 permissions:
   actions: write # Used by nick-fields/retry@v3.0.0 to retry job steps if needed.
@@ -14,7 +15,7 @@ jobs:
   e2e:
     name: e2e test
     # prevent job running from forked repository
-    if: ${{ github.repository == 'karmada-io/karmada' }}
+    if: ${{ github.repository == 'karmada-io/karmada' || github.repository == 'aditya7302/karmada'}}
     runs-on: ubuntu-22.04
     strategy:
       # max-parallel limits the max number of jobs running at the same time.
