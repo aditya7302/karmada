@@ -9,8 +9,8 @@ on:
 permissions:
   actions: write # Used by nick-fields/retry@v3.0.0 to retry job steps if needed.
   contents: read # Required by actions/checkout@v4 to fetch the repository contents.
-  deployments: write # Needed to manage deployments for setting up the test environment.
-  statuses: read # Necessary to check the status of deployments before running tests.
+  # deployments: write # Needed to manage deployments for setting up the test environment.
+  # statuses: read # Necessary to check the status of deployments before running tests.
 
 jobs:
   e2e:
